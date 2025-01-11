@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Model Chat</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'static.css' %}">
+</head>
+
+<body>
+    <div class="chat-container">
+        <h1>RAG Model Chat</h1>
+
+        <!-- Display the parsed result -->
+        {% if result %}
+        <p><strong>Result:</strong> {{ result }}</p>
+        {% endif %}
+
+        <!-- Form to send user input -->
+        <form action="{% url 'submit_prompt' %}" method="POST">
+            {% csrf_token %}
+            <label for="prompt">Enter your prompt:</label>
+            <input type="text" name="prompt" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="{% static 'static.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+Tools/frameworks we require to build the model
+
+openai
+langchain
+pinecone
+sentence_transformers
+selenium 
+beautiful Soup
+flask
+request
+Ollama
